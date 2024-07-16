@@ -10,7 +10,7 @@ name: Java CI with Gradle
 on:
   push:
     branches: [ "master" ]
-    
+
 jobs:
   build:
 
@@ -48,9 +48,8 @@ jobs:
       env: # Configure AWS credential / AWS 환경설정
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
-          AWS_REGION: ap-northeast-2
       run: aws s3 cp --region ap-northeast-2 --acl private ./freelec-springboot2-webservice-build.zip s3://freelec-sprinboot2-build-zip/
 
     # Connect Github action to AWS CodeDeploy 
     - name : Request deploy to AWS CodeDeploy / 배포 요청
-      run : aws deploy create-deployment --application-name freelec-springboot2-webservice --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name freelec-springboot2-webservice-group --s3-location bucket=freelec-sprinboot2-build-zip,bundleType=zip,key=freelec-springboot2-webservice-build.zip --debug
+      run : aws deploy create-deployment --application-name freelec-springboot2-webservice --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name freelec-springboot2-webservice-group --s3-location bucket=freelec-sprinboot2-build-zip,bundleType=zip,key=freelec-springboot2-webservice-build.zip --region ap-northeast-2 --debug
