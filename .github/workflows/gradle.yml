@@ -54,4 +54,4 @@ jobs:
 
     # Connect Github action to AWS CodeDeploy 
     - name : Request deploy to AWS CodeDeploy / 배포 요청
-      run : aws deploy create-deployment --application-name ${{ env.CODEDEPLOY_NAME }} --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name ${{ env.CODEDEPLOY_GROUP }}--s3-location bucket=${{ env.S3_BUCKET_NAME }},bundleType=zip,key=$GITHUB_SHA.zip
+      run : aws deploy create-deployment --application-name $CODEDEPLOY_NAME --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name $CODEDEPLOY_GROUP --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=$GITHUB_SHA.zip
