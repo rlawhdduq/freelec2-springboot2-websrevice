@@ -53,4 +53,4 @@ jobs:
 
     # Connect Github action to AWS CodeDeploy 
     - name : Request deploy to AWS CodeDeploy / 배포 요청
-      run : aws deploy create-deployment --application-name freelec-springboot2-webservice --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name freelec-springboot2-webservice-group --s3-location bucket=freelec-sprinboot2-build-zip,bundleType=zip,key=freelec-springboot2-webservice-build.zip
+      run : aws deploy create-deployment --application-name freelec-springboot2-webservice --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name freelec-springboot2-webservice-group --s3-location bucket=freelec-sprinboot2-build-zip,bundleType=zip,key=freelec-springboot2-webservice-build.zip --debug
