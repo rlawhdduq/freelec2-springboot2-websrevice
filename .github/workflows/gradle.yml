@@ -11,7 +11,7 @@ on:
   push:
     branches: [ "master" ]
 env:
-    S3_BUCKET_NAME : freelec-sprinboot2-build-zip
+   AWS_REGION: ap-northeast-2
 jobs:
   build:
 
