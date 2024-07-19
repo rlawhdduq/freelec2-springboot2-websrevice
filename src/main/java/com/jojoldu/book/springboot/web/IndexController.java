@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpSession;
-// 테스트 주석
+// 테스트 주석2
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
