@@ -42,8 +42,8 @@ jobs:
     # $GITHUB_SHA라는 Github Action에서 기본 제공하는 환경변수도 있다고 한다( 커밋ID를 제공해준다 )
     - name : Make Directory for deliver / .jar파일을 담을 폴더 생성
       run : mkdir deploy
-    - name : Copy the .jar file / .jar 파일 복사
-      run : cp ./build/libs/*.jar ./deploy/ | cp ./appspec.yml ./deploy
+    - name : Copy the .jar file / .jar 파일 복사, appspec.yml 복사(추가), 배포를 위한 sh복사(추가)
+      run : cp ./build/libs/*.jar ./deploy/ | cp ./appspec.yml ./deploy | cp ./scripts/*.sh ./deploy
     - name : Make .jar file to zip file / .jar파일을 전달하기 위해서 zip파일로 압축(.jar파일은 전달이 불가능해서 압축하는 과정을 거친다)
       run : zip -r -qq -j ./freelec-springboot2-webservice-build.zip ./deploy
     - name: Configure AWS credentials
