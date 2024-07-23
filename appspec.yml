@@ -1,5 +1,4 @@
-version: 0.0
-os: linux
+version: '1.0.1-SNAPSHOT'
 files:
   - source: /
     destination: /home/ec2-user/app/step2/zip/
